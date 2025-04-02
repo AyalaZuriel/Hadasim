@@ -1,5 +1,21 @@
-import math
+"""
+This exercise asks to build rectangular and triangular towers based on user-provided width and height.
+The program allows the user to:
+1. Calculate the area or perimeter of a rectangular tower.
+2. Print a triangular tower or calculate its perimeter.
+3. Exit the program.
 
+Functionality:
+- A rectangular tower is classified as either a square or a rectangle, with an area or perimeter calculation.
+- A triangular tower can be printed as an ASCII pattern or have its perimeter calculated using the Pythagorean theorem.
+
+User Interaction:
+- The user selects the type of tower (rectangular or triangular).
+- The user provides the width and height of the tower.
+- The program executes the appropriate function based on the user's choice.
+"""
+
+import math
 
 def rectangular_tower(width, height):
     """
@@ -23,7 +39,6 @@ def rectangular_tower(width, height):
         print("It's a rectangle.")
         print("Perimeter:", 2 * (height + width))
 
-
 def print_triangular(width, height):
     """
     Function to print a triangular pattern of stars with the given width and height.
@@ -32,16 +47,18 @@ def print_triangular(width, height):
     - width: The width of the tower.
     - height: The height of the tower.
     """
-
     if width == 3:  # edge-case of width 3 of triangular
         for i in range(height - 1):
             print("*".center(3))
+            
         print("*" * 3)
+        
         return
 
     if width == 1:  # edge-case of width 3 of triangular
         for i in range(height):
             print("*")
+            
         return
 
     odds = (width - 2) // 2  # number of odd numbers between 1 to width
@@ -62,7 +79,6 @@ def print_triangular(width, height):
             change -= 1
 
     print("*" * width)  # print last line
-
 
 def triangular_tower(width, height):
     """
@@ -94,7 +110,6 @@ def triangular_tower(width, height):
         print("Invalid choice.")
         return
 
-
 def get_dimensions():
     """
     Function to get dimensions of the tower from the user
@@ -110,7 +125,6 @@ def get_dimensions():
                 print("The height should be bigger or equal to 2")
         except ValueError:
             print("Please enter valid numbers")
-
 
 def main():
     while True:
@@ -131,7 +145,6 @@ def main():
             break
         else:
             print("Invalid choice. Please enter again.")
-
 
 if __name__ == "__main__":
     main()
